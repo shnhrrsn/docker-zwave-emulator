@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+export PYTHONPATH=/emulator
+cd /emulator/bin
+
+echo >&2 "[zwemulator] starting"
+exec ./zwemulator.py

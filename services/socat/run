@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+while [ ! -e /tmp/ttyS0 ]; do
+	echo >&2 "[socat] Waiting for /tmp/ttyS0"
+	sleep 1
+done
+
+echo >&2 "[socat] starting"
+exec socat -d -d tcp-l:32375,reuseaddr,fork file:/tmp/ttyS0,raw,nonblock,echo=0
